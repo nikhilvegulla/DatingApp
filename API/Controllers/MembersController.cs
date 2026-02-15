@@ -1,13 +1,13 @@
 ﻿using API.Data;
 using API.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class MembersController: ControllerBase
+    [Authorize]
+    public class MembersController: BaseApiController
     {
         private readonly AppDbContext _context;
         public MembersController(AppDbContext context)
